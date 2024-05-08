@@ -1,2 +1,21 @@
 application:
-  wake_up: 'God Morgen!'
+  title: "The Monster Games"
+control_panel:
+  instructions: "Sett verdier her"
+  set_value_btn: "Sett verdier"
+  labels:
+    calories: "Starte kalorier"
+    total_food: "Total mat"
+    poison_chance: "Gift sjanse"
+    number_of_monsters: "Monsters"
+monster_card: 
+  monster_id : " Monster : {monster_id}"
+  calories: "Kalorier:"
+  health: "Helse:"
+  health_status : "{health_status, select,
+  true {Alive}
+  other{Dead}
+  }"
+step_counter:
+  title: "Steps"
+  next_step_btn: "Neste Step"
