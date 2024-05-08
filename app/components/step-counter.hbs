@@ -1,9 +1,9 @@
 <div class=" w-28 mt-10 h-24 flex flex-col items-center py-1 px-2 rounded-lg shadow-lg bg-blue-400">
     <h3>
-        Steps
+        {{t "step_counter.title"}}
     </h3>
     <Input class=" w-7 my-2 bg-gray-400 text-black" readonly @value={{@steps}} data-test-steps></Input>
     <button class=" h-8 w-24 bg-blue-600 rounded-full " type="button" {{on 'click' @stepAction}}
-        disabled={{@disableStepBtn}}> Next Step
+        disabled={{@disableStepBtn}}> {{t "step_counter.next_step_btn"}}
     </button>
 </div>
