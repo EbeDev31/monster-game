@@ -1,0 +1,9 @@
+<div class=" mt-10 h-[200px] w-[200px] flex flex-col rounded-lg shadow-lg shadow-slate-500 bg-slate-950">
+    <div class=" h-1/4 border-b-2 border-gray-600 rounded-t-lg ">
+        <h2 class="p-4">Monster : {{@monster.monsterId}} </h2>
+    </div>
+    <div class=" h-3/4 p-4">
+        <h3 class=" text-wrap ">Calories: <span>{{@monster.calories}}</span></h3>
+        <h3>Health: <span data-test-monster-health>{{if @monster.health 'Alive' 'Dead'}}</span></h3>
+    </div>
+</div>

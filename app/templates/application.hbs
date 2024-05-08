@@ -1,5 +1,19 @@
 {{page-title "MonsterGame"}}
 
-<h2 id="title">Welcome to Ember</h2>
+<div class="flex flex-col items-center text-white  bg-slate-800 h-dvh overflow-scroll">
+    <h1 class=" text-red-500 text-3xl font-bold underline">
+        The Monster Games
+    </h1>
+    <div class=" w-2/3 lg:w-1/2">
+        <ControlPanel @displayedUserInput={{this.displayedUserInput}} @getSetDetails={{this.getSetDetails}}
+            @createMonsters={{this.createMonsters}} @steps={{this.steps}} @stepAction={{this.stepAction}}
+            @isSetBtnDisable={{this.isSetBtnDisable}} @disableStepBtn={{this.disableStepBtn}} />
+    </div>
+    <div class="w-full lg:w-2/3 gap-4 flex flex-row flex-wrap justify-center p-6 ">
+        {{#each this.monsterlist as |monster|}}
+        <MonsterCard @monster={{monster}} />
+        {{/each}}
+    </div>
+</div>
 
 {{outlet}}

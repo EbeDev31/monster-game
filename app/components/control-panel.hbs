@@ -1,0 +1,40 @@
+<div class=" mt-10 h-fit w-full  flex flex-col rounded-lg shadow-lg bg-slate-500">
+    <div class=" h-1/4 border-b-2 border-neutral-800 rounded-t-lg ">
+        <h2 class="p-2">Set values here</h2>
+    </div>
+    <div class="flex flex-row ">
+        <div class=" text-black flex-[2] h-fit p-2 flex flex-row flex-wrap ">
+            <div class="m-4 "> <label class="text-white" for="calories"> Starting Calories</label>
+                <Input class="px-2 " id="calories" type="number" @value={{@displayedUserInput.calories}} {{on 'input'
+                    @getSetDetails}} />
+            </div>
+            <div class="m-4 "> <label class="text-white" for="monsters"> Monsters</label>
+                <Input class="px-2 " id="monsters" type="number" @value={{@displayedUserInput.numMonsters}} {{on 'input'
+                    @getSetDetails}} />
+            </div>
+            <div class="m-4 "> <label class="text-white" for="numFood"> Total Food</label>
+                <Input class="px-2 " id="numFood" type="number" @value={{@displayedUserInput.totalFood}} {{on 'input'
+                    @getSetDetails}} data-test-control-panel-total-food />
+            </div>
+            {{!-- <div class="m-4 "> <label for="foodValue"> Food Value</label>
+                <Input class="px-2 " id="foodValue" type="number" @value={{@foodValue}} {{on 'input' @setFoodValue}} />
+            </div> --}}
+            <div class="m-4 "><label class="text-white" for="poisonChance"> Poison Chance</label>
+                <Input class="px-2 " id="poisonChance" type="number" @value={{@displayedUserInput.poisonChance}}
+                    {{on 'input' @getSetDetails}} />
+            </div>
+
+        </div>
+
+        <div class=" flex-[1] flex flex-col justify-center items-center border-l-8 border-neutral-800 ">
+            <div class=" m-4 flex flex-row">
+                <button class=" h-8 w-24 bg-blue-600 rounded-full " type="button" disabled={{@isSetBtnDisable}}
+                    {{on 'click' @createMonsters}}>
+                    Set Values</button>
+            </div>
+            <div>
+                <StepCounter @steps={{@steps}} @stepAction={{@stepAction}} @disableStepBtn={{@disableStepBtn}} />
+            </div>
+        </div>
+    </div>
+</div>
