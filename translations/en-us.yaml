@@ -1,6 +1,11 @@
 application:
   title: "The Monster Games"
-  wake_up: 'Good Morning!'
+  language: "{language, select,
+  us {English}
+  norsk { Norsk}
+  other {}
+
+  }"
 control_panel:
   instructions: "Set values here"
   set_value_btn: "Set Values"

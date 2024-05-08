@@ -53,9 +53,21 @@ export default class ApplicationController extends Controller {
 
     get selections() {
         let active = this.activeLocale
+
+        let displayedLocale = ''
         return this.locales.map(locale => {
+            if (locale === 'en-us') {
+                displayedLocale = 'us'
+            } else if (locale === 'nb-no') {
+                displayedLocale = 'norsk'
+
+            } else {
+                displayedLocale = locale
+            }
+
             return {
-                locale: locale,
+                locale,
+                displayedLocale,
                 active: active.indexOf(locale) > -1
             };
         });

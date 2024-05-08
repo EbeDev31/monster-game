@@ -1,5 +1,11 @@
 application:
   title: "The Monster Games"
+  language: "{language, select,
+  us {English}
+  norsk { Norsk}
+  other {}
+
+  }"
 control_panel:
   instructions: "Sett verdier her"
   set_value_btn: "Sett verdier"
