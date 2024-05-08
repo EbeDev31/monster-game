@@ -5,7 +5,6 @@
         {{t "application.title"}}
     </h1>
 
-    <h1>{{t "application.wake_up"}} </h1>
     <div>
         {{#each this.selections as |model|}}
         <button class={{if model.active "active" }} {{action "changeLocale" model.locale}}>
