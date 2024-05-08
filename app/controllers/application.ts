@@ -56,12 +56,16 @@ export default class ApplicationController extends Controller {
 
         let displayedLocale = ''
         return this.locales.map(locale => {
+
             if (locale === 'en-us') {
                 displayedLocale = 'us'
             } else if (locale === 'nb-no') {
                 displayedLocale = 'norsk'
+            } else if (locale === 'et-ee') {
+                displayedLocale = 'esti'
+            }
 
-            } else {
+            else {
                 displayedLocale = locale
             }
 

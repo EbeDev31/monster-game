@@ -3,6 +3,8 @@ application:
   language: "{language, select,
   us {English}
   norsk { Norsk}
+  esti {Eesti}
+
   other {}
 
   }"

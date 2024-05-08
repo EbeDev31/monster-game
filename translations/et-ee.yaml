@@ -4,25 +4,24 @@ application:
   us {English}
   norsk { Norsk}
   esti {Eesti}
-
   other {}
 
   }"
 control_panel:
-  instructions: "Set values here"
-  set_value_btn: "Set Values"
+  instructions: "Siin määrake väärtused"
+  set_value_btn: "Siin määrake"
   labels:
-    calories: "Starting Calories"
-    total_food: "Total Food"
-    poison_chance: "Poison Chance"
+    calories: "Alguskalorid"
+    total_food: "Toit kokku"
+    poison_chance: "Mürgituse võimalus"
     number_of_monsters: "Monsters"
 monster_card: 
   monster_id : " Monster : {monster_id}"
-  calories: "Calories:"
-  health: "Health:"
+  calories: "Kalorid:"
+  health: "Tervis:"
   health_status : "{health_status, select,
-  true {Alive}
-  other{Dead}
+  true {Elus}
+  other{Surnud}
   }"
 step_counter:
   title: "Steps"
