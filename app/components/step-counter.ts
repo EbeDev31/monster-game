@@ -15,4 +15,4 @@ export interface StepCounterSignature {
   Element: null;
 }
 
-export default class StepCounterComponent extends Component<StepCounterSignature> { }
+export default class StepCounterComponent extends Component<StepCounterSignature> {}

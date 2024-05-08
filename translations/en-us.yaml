@@ -1,0 +1,7 @@
+application:
+  title: "The Monster Games"
+  wake_up: 'Good Morning!'
+contol_panel:
+monster_card:
+step_counter:
+

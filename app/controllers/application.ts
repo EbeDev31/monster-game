@@ -2,6 +2,8 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { A } from '@ember/array';
+import { inject as service } from '@ember/service';
+import Intl from 'ember-intl/services/intl';
 
 interface Monster {
     calories: number;
@@ -15,6 +17,9 @@ interface FoodPack {
 }
 
 export default class ApplicationController extends Controller {
+    @service intl!: Intl;
+    @tracked activeLocale = this.intl.locale
+    @tracked locales = this.intl.locales
     @tracked steps: number = 0;
     @tracked foodBasket: FoodPack[] = [];
     @tracked monsterlist: Monster[] = [];
@@ -46,12 +51,26 @@ export default class ApplicationController extends Controller {
         return this.steps === 0 || this.isGameOver;
     }
 
+    get selections() {
+        let active = this.activeLocale
+        return this.locales.map(locale => {
+            return {
+                locale: locale,
+                active: active.indexOf(locale) > -1
+            };
+        });
+    }
+
+    @action
+    changeLocale(locale) {
+        return this.intl.set('locale', locale);
+    }
+
     @action
     stepsCount() {
-        const totalFood = this.userInput.totalFood || 10
-        const numMonsters = this.userInput.numMonsters || 5
-        this.steps =
-            Math.floor(totalFood / numMonsters);
+        const totalFood = this.userInput.totalFood || 10;
+        const numMonsters = this.userInput.numMonsters || 5;
+        this.steps = Math.floor(totalFood / numMonsters);
     }
 
     @action
@@ -123,7 +142,7 @@ export default class ApplicationController extends Controller {
     @action
     createMonsters() {
         const numMonsters = this.userInput.numMonsters || 5;
-        this.steps = 0
+        this.steps = 0;
         // debugger
         this.monsterlist = [];
         this.EmberMonsterList = A(this.monsterlist);
@@ -144,8 +163,7 @@ export default class ApplicationController extends Controller {
 
     @action
     fillFoodBasket() {
-
-        const totalFood = this.userInput.totalFood || 10
+        const totalFood = this.userInput.totalFood || 10;
         for (let i = 0; i < totalFood; i++) {
             const foodPack: FoodPack = {
                 value: this.userInput.foodValue
@@ -160,13 +178,13 @@ export default class ApplicationController extends Controller {
 
     @action
     anyMonsterAlive() {
-        let monstersAlive = 0
-        this.monsterlist.map(monster => {
+        let monstersAlive = 0;
+        this.monsterlist.map((monster) => {
             if (monster.health) {
-                monstersAlive++
+                monstersAlive++;
             }
-        })
-        return monstersAlive > 1
+        });
+        return monstersAlive > 1;
     }
 
     @action

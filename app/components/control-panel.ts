@@ -18,9 +18,9 @@ export interface ControlPanelSignature {
       poisonChance: number;
       monsterlist: Monster[];
     };
-    steps: number
-    isSetBtnDisable: boolean
-    disableStepBtn: boolean
+    steps: number;
+    isSetBtnDisable: boolean;
+    disableStepBtn: boolean;
     getSetDetails: () => void;
     createMonsters: () => void;
     stepAction: () => void;
@@ -29,4 +29,4 @@ export interface ControlPanelSignature {
   Element: null;
 }
 
-export default class ControlPanelComponent extends Component<ControlPanelSignature> { }
+export default class ControlPanelComponent extends Component<ControlPanelSignature> {}

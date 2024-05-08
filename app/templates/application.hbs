@@ -2,8 +2,18 @@
 
 <div class="flex flex-col items-center text-white  bg-slate-800 h-dvh overflow-scroll">
     <h1 class=" text-red-500 text-3xl font-bold underline">
-        The Monster Games
+        {{t "application.title"}}
     </h1>
+
+    <h1>{{t "application.wake_up"}} </h1>
+    <div>
+        {{#each this.selections as |model|}}
+        <button class={{if model.active "active" }} {{action "changeLocale" model.locale}}>
+            {{model.locale}}
+        </button>
+        {{/each}}
+    </div>
+
     <div class=" w-2/3 lg:w-1/2">
         <ControlPanel @displayedUserInput={{this.displayedUserInput}} @getSetDetails={{this.getSetDetails}}
             @createMonsters={{this.createMonsters}} @steps={{this.steps}} @stepAction={{this.stepAction}}
