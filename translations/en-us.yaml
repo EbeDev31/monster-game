@@ -1,7 +1,13 @@
 application:
   title: "The Monster Games"
   wake_up: 'Good Morning!'
-contol_panel:
+control_panel:
+  instructions: "Set values here"
+  labels:
+    calories: "Starting Calories"
+    total_food: "Total Food"
+    poison_chance: "Poison Chance"
+    number_of_monsters: "Monsters"
 monster_card:
 step_counter:
 
