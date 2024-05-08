@@ -1,26 +1,26 @@
-<div class=" mt-10 h-fit w-full  flex flex-col rounded-lg shadow-lg bg-slate-500">
+<div class=" mt-10 h-fit w-full  flex flex-col rounded-lg shadow-lg bg-slate-500 ">
     <div class=" h-1/4 border-b-2 border-neutral-800 rounded-t-lg ">
         <h2 class="p-2">{{t "control_panel.instructions"}} </h2>
     </div>
     <div class="flex flex-row ">
-        <div class=" text-black flex-[2] h-fit p-2 flex flex-row flex-wrap ">
-            <div class="m-4 "> <label class="text-white" for="calories">{{t "control_panel.labels.calories"}} </label>
+        <div class=" flex-[2] h-fit p-2 flex flex-row flex-wrap ">
+            <div class="m-4 "> <label class="" for="calories">{{t "control_panel.labels.calories"}} </label>
                 <Input class="px-2 " id="calories" type="number" @value={{@displayedUserInput.calories}} {{on 'input'
                     @getSetDetails}} />
             </div>
-            <div class="m-4 "> <label class="text-white" for="monsters"> {{t
+            <div class="m-4 "> <label class="" for="monsters"> {{t
                     "control_panel.labels.number_of_monsters"}}</label>
                 <Input class="px-2 " id="monsters" type="number" @value={{@displayedUserInput.numMonsters}} {{on 'input'
                     @getSetDetails}} />
             </div>
-            <div class="m-4 "> <label class="text-white" for="numFood"> {{t "control_panel.labels.total_food"}}</label>
+            <div class="m-4 "> <label class="" for="numFood"> {{t "control_panel.labels.total_food"}}</label>
                 <Input class="px-2 " id="numFood" type="number" @value={{@displayedUserInput.totalFood}} {{on 'input'
                     @getSetDetails}} data-test-control-panel-total-food />
             </div>
             {{!-- <div class="m-4 "> <label for="foodValue"> Food Value</label>
                 <Input class="px-2 " id="foodValue" type="number" @value={{@foodValue}} {{on 'input' @setFoodValue}} />
             </div> --}}
-            <div class="m-4 "><label class="text-white" for="poisonChance"> {{t
+            <div class="m-4 "><label class="" for="poisonChance"> {{t
                     "control_panel.labels.poison_chance"}}</label>
                 <Input class="px-2 " id="poisonChance" type="number" @value={{@displayedUserInput.poisonChance}}
                     {{on 'input' @getSetDetails}} />

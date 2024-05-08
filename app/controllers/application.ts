@@ -28,6 +28,7 @@ export default class ApplicationController extends Controller {
     @tracked isGameOver: boolean = false;
     @tracked stopUpdate: boolean = false;
     EmberMonsterList = A(this.monsterlist);
+    @tracked darkMode: string = ''
 
     @tracked userInput = {
         calories: 0,
@@ -77,6 +78,12 @@ export default class ApplicationController extends Controller {
         });
     }
 
+    @action
+    setdarkMode() {
+        console.log('Setting Dark');
+
+        return this.darkMode = this.darkMode === '' ? 'dark' : ''
+    }
     @action
     changeLocale(locale) {
         return this.intl.set('locale', locale);

@@ -1,5 +1,6 @@
 application:
   title: "The Monster Games"
+  dark_mode_btn: "Dark Mode"
   language: "{language, select,
   us {English}
   norsk { Norsk}
